@@ -19,7 +19,7 @@ import CommentSection from './CommentSection'
 import PostButtons from './PostButtons'
 import {useState, useContext} from 'react'
 import { UserCredentials } from '../App'
-
+import baseUrl from '../utils/baseUrl'
 export default function Post(props) {
     //credentials context
     const credentials = useContext(UserCredentials)
@@ -44,7 +44,7 @@ export default function Post(props) {
         console.log(newContent)
         try{
             //make a fetch request with post_id(from mongodb) that was passed as props as a query parameter
-            const response = await fetch(`/posts/${post_id}`, {
+            const response = await fetch(`${baseUrl}/posts/${post_id}`, {
                 method: 'PUT',
                 headers: {
                     //use token from login as bearer token in auth headers

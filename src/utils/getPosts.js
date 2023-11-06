@@ -1,10 +1,10 @@
 import React from 'react'
-
+import baseUrl from './baseUrl'
 const getPosts = async (token) => {
         
     try {
         //response for api fetch request 
-        const response = await fetch('/users/getPosts', {
+        const response = await fetch(`${baseUrl}/users/getPosts`, {
             //get request
             method: "GET",
             //use token as auth headers

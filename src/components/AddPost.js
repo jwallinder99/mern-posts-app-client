@@ -7,6 +7,7 @@ import {
 } from '@mui/material'
 import getPosts from '../utils/getPosts'
 import { UserCredentials } from '../App'
+import baseUrl from '../utils/baseUrl'
 export default function AddPost({ token, reFetch }) {
     //piece of state for form input
     const [ postInput, setPostInput ] = useState("")
@@ -18,7 +19,7 @@ export default function AddPost({ token, reFetch }) {
         
         try {
             //make a request to api
-            const response = await fetch('/posts/addPost', {
+            const response = await fetch(`${baseUrl}/posts/addPost`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

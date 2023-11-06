@@ -9,7 +9,7 @@ import {
     Stack
 } from '@mui/material'
 import { useNavigate } from "react-router-dom";
-
+import baseUrl from '../utils/baseUrl'
 export default function Login() {
     //piece of state for remembering username
     //piece of state for remembering password
@@ -27,7 +27,7 @@ export default function Login() {
         e.preventDefault()
         try {
             //make a request to the api endpoint defined in express server
-            const response = await fetch('https://mern-posts-app-api.onrender.com/users/login', {
+            const response = await fetch(`${baseUrl}/users/login`, {
                 //post headers
                 method: "POST",
                 headers: {

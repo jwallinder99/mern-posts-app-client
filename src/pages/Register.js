@@ -9,7 +9,7 @@ import {
     Stack
 } from '@mui/material'
 
-
+import baseUrl from '../utils/baseUrl';
 export default function SignUp() {
     //piece of state for remembering username
     const [ username, setUsername ] = useState("")
@@ -31,7 +31,7 @@ export default function SignUp() {
         
         try {
             //make a request to an api endpoint defined in express server
-            const response = await fetch(`/users/register`, {
+            const response = await fetch(`${baseUrl}/users/register`, {
                 //post request
                 method: "POST",
                 headers: {

@@ -4,7 +4,7 @@ import {
 } from '@mui/material'
 import { UserCredentials } from '../App'
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import baseUrl from '../utils/baseUrl'
 export default function DeleteButton({ post_id, reDisplay }) {
     //get credentials from context
     const credentials = useContext(UserCredentials)
@@ -15,7 +15,7 @@ export default function DeleteButton({ post_id, reDisplay }) {
         
         try {
             //get response from fetch request, passing post_id from props as query parameter
-            const response = await fetch(`/posts/${post_id}`, {
+            const response = await fetch(`${baseUrl}/posts/${post_id}`, {
                 //pass token from context as auth header
                 method: 'DELETE',
                 headers: {

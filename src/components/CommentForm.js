@@ -8,7 +8,7 @@ import {
  } from '@mui/material'
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import { UserCredentials } from '../App';
-
+import baseUrl from '../utils/baseUrl';
 
 export default function CommentForm({ post_id , reDisplay, comments}) {
   //state for comment input
@@ -30,7 +30,7 @@ export default function CommentForm({ post_id , reDisplay, comments}) {
       //make a new array of comments by spreading current comments array and adding new object to it
       const updatedComments = [...comments, newComment]
       //make fetch request with post_id passed as props as query parameter
-      const response = await fetch(`/posts/${post_id}`, {
+      const response = await fetch(`${baseUrl}/posts/${post_id}`, {
         //put method to update, because the comments for a post is an array of items inside a document
         method: 'PUT',
         //use token from context in auth headers
