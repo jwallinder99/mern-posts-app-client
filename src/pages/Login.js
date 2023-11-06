@@ -27,7 +27,7 @@ export default function Login() {
         e.preventDefault()
         try {
             //make a request to the api endpoint defined in express server
-            const response = await fetch('/users/login', {
+            const response = await fetch('https://mern-posts-app-api.onrender.com/users/login', {
                 //post headers
                 method: "POST",
                 headers: {

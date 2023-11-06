@@ -1,0 +1,1 @@
+export const baseUrl = "https://mern-posts-app-api.onrender.com"
